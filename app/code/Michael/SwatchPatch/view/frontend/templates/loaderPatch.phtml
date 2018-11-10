@@ -1,0 +1,15 @@
+<?php
+/**
+ * Customization
+ * Patch for image loader on the product view`
+ * in original version there is no product picture
+ * if product is configurateable
+ */
+?>
+<script type="text/x-magento-init">
+    {
+        "[data-role=swatch-options]": {
+          "loaderPatch": {}
+        }
+    }
+</script>
