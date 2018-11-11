@@ -1,3 +1,9 @@
+/**
+* ---- Product View -----
+* Force the click event on the first swatch (colour)
+* to load the first available images.
+* Default in M2: is placeholder
+*/
 define([
     "jquery",
     "domReady!"
