@@ -1,0 +1,9 @@
+<!--
+/**
+ * Custom Luma thene
+ */
+-->
+<theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
+    <title>Custom Luma</title>
+    <parent>Magento/luma</parent>
+</theme>
