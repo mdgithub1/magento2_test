@@ -1,0 +1,15 @@
+<?php
+/**
+ * Customization
+ * Patch for navbar. Add active class to item in submenu
+ * In original version the submenu between active level0 menu
+ * and the next active submenu loose class 'active'
+ */
+?>
+<script type="text/x-magento-init">
+    {
+        "[data-action=navigation]": {
+          "navbarPatch": {}
+        }
+    }
+</script>
