@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Product view modifications
+ *  - name(s) of tab(s)
+ *  - additional tab(s)
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+  <body>
+    <!-- Change the name of the first tag "more details" -->
+    <referenceBlock name="product.info.description">
+      <arguments>
+        <argument name="title" translate="true" xsi:type="string">Description</argument>
+      </arguments>
+    </referenceBlock>
+    <move element="catalog.product.related" destination="product.info.details" />
+    <!-- Add new tab "Related products" -->
+    <referenceBlock name="product.info.details">
+      <block class="Magento\Catalog\Block\Product\View" name="deliveryinfo.tab" as="deliveryinfo" template="Magento_Catalog::product/related-products.phtml" group="detailed_info" >
+        <arguments>
+          <argument translate="true" name="title" xsi:type="string">Related Products</argument>
+        </arguments>
+      </block>
+    </referenceBlock>
+  </body>
+</page>
