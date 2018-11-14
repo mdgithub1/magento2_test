@@ -3,7 +3,7 @@
 /**
  * Product view modifications
  *  - name(s) of tab(s)
- *  - additional tab(s)
+ *  - additional tab(s) e.g. Related Products
  */
 -->
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -17,7 +17,7 @@
     <move element="catalog.product.related" destination="product.info.details" />
     <!-- Add new tab "Related products" -->
     <referenceBlock name="product.info.details">
-      <block class="Magento\Catalog\Block\Product\View" name="deliveryinfo.tab" as="deliveryinfo" template="Magento_Catalog::product/related-products.phtml" group="detailed_info" >
+      <block class="Magento\Catalog\Block\Product\View" name="relatedproducts.tab" as="relatedproducts" template="Magento_Catalog::product/related-products.phtml" group="detailed_info" >
         <arguments>
           <argument translate="true" name="title" xsi:type="string">Related Products</argument>
         </arguments>
