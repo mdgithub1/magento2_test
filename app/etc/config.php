@@ -143,6 +143,7 @@ return [
         'Dotdigitalgroup_Email' => 1,
         'Magento_WishlistAnalytics' => 1,
         'Magento_WishlistSampleData' => 1,
+        'Michael_DefaultTab' => 1,
         'Michael_NavbarPatch' => 1,
         'Michael_SwatchPatch' => 1,
         'Temando_Shipping' => 1,
