@@ -1,8 +1,11 @@
 <?xml version="1.0"?>
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Michael_Finance::css/pl-calculator.css"/>
+    </head>
     <body>
         <referenceContainer name="product.info.main">
-            <block class="Magento\Catalog\Block\Product\View" name="product.info.finance" template="Michael_Finance::finance.phtml" after="product.info.price" />
+            <block class="Michael\Finance\Block\Product" name="product.info.finance" template="Michael_Finance::finance.phtml" after="product.info.price" />
         </referenceContainer>
     </body>
 </page>

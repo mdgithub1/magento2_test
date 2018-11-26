@@ -3,19 +3,46 @@
         "[data-role=priceBox]": {
           "finance": {
             "triggerEvent": "click"
-          }
+          },
+          "calculator": {}
         }
     }
 </script>
 
-<a href="javascript:void(0);" id="msrp-popup-1xxc" class="action map-show-info">Finance options</a>
+<?php $currentProduct = $block->getCurrentProduct(); ?>
+
+<a href="javascript:void(0);" id="msrp-popup-1xxc" class="action map-show-info">Click to see finance options</a>
 <div id="popup-modal-finance" class="map-popup">
-    <div class="popup-header">
-        <strong class="title" id="map-popup-heading-finance">Finance</strong>
+    <div class="popup-content">
+        <strong class="title" id="map-popup-heading-finance">Minimum order for finance is £50.00</strong>
+    </div>
+    <div class="popup-content">
+          <p>Actual price for <a href="<?= $currentProduct->getProductUrl() ?>"><?= $currentProduct->getName() ?></a>:
+          <strong class="title" id="map-popup-heading-finance"><?= $currentProduct->getFormattedPrice() ?></strong></p>
+          <p>Add all items to the cart and select "Pay by finance" on payment card.</p>
+        <hr />
     </div>
     <div class="popup-content">
         <div class="map-help-text" id="map-popup-text-finance">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper, neque vel malesuada molestie, justo justo sollicitudin leo, eu auctor arcu est in ligula. Ut rutrum aliquam magna dapibus viverra. Suspendisse non mollis velit, eu aliquet felis. Morbi molestie ornare ante id ornare. In eleifend nisl sit amet massa venenatis tincidunt. In finibus quis ligula eget vulputate. Ut laoreet leo vitae convallis varius. Sed consequat tincidunt lorem, ut vehicula lorem consequat ac.
+
+          <!-- Calcultator: Start (modified 3rd part)--------->
+          <div class="payl8r-price-checker-wrapper">
+            <div class=payl8r-example-amount>
+              <label class="example_amount_label" for="example_amount">&pound;</label>
+              <input id="example_amount" min="50" value="<?php
+                  if($currentProduct->getFinalPrice() < 50) {
+                      echo "50.00";
+                  } else {
+                      echo $currentProduct->getFinalPrice();
+                  }
+                ?>" type="number">
+            </div>
+            <div id="example_frame"></div>
+            <div><input id="example_value" value="1" type="hidden"></div>
+          </div>
+          <!--  Calculator: END ----------->
+
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper, neque vel malesuada molestie, justo justo sollicitudin leo, eu auctor arcu est in ligula.
         </div>
     </div>
 </div>
