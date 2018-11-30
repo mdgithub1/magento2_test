@@ -145,6 +145,7 @@ return [
         'Magento_WishlistSampleData' => 1,
         'Michael_DefaultTab' => 1,
         'Michael_Finance' => 1,
+        'Michael_FinancePayment' => 1,
         'Michael_NavbarPatch' => 1,
         'Michael_SwatchPatch' => 1,
         'Temando_Shipping' => 1,
