@@ -1,5 +1,5 @@
 /**
- * Copyright © 2015 Magento. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 define(
@@ -18,6 +18,15 @@ define(
             getMailingAddress: function() {
 
                 return window.checkoutConfig.payment.checkmo.mailingAddress;
+            },
+
+            /**
+            * Get value of instruction field.
+            * @returns {String}
+            */
+            getInstructions: function () {
+
+                return window.checkoutConfig.payment.instructions[this.item.method];
             },
 
         });

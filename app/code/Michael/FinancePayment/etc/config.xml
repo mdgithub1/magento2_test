@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Copyright © 2015 Magento. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
- *
+ */
  * Paymenrt config
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
     <default>
         <payment>
-                <paymentmethod>
+            <paymentmethod>
                 <active>1</active>
                 <title>Pay on Finance</title>
-                <order_status>pending_payment</order_status>
-                <instructions>Instruction...</instructions>
+                <order_status>pending</order_status>
+                <instructions>Instructions</instructions>
                 <payment_action>true</payment_action>
                 <model>Michael\FinancePayment\Model\PaymentMethod</model>
                 <group>offline</group>
