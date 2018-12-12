@@ -1,0 +1,37 @@
+<?php
+  /**
+  *   Admin view payment->Additional Information
+  */
+ ?>
+
+<?php
+    use Michael\FinancePayment\Model\PaymentMethod;
+    use Magento\Sales\Model\Order\Payment\Transaction;
+
+    $payment = $block->getOrder()->getPayment();
+    $method = $payment->getMethodInstance()->getCode();
+    $dob = $payment->getAdditionalInformation('addDob');
+    $incom = $payment->getAdditionalInformation('incom');
+?>
+
+<?php if ($method == PaymentMethod::PAYMENT_METHOD_FINANCE_CODE ) :?>
+<div class="admin__page-section-item-title">
+    <hr />
+    <span class="title">Additional information:</span>
+</div>
+<div class="admin__page-section-item-content">
+
+    <?php
+    if(empty($dob)) {
+      $dob = "No data";
+    }
+    echo __('DOB: <strong>'.$dob.'</strong> | ');
+
+    if(empty($incom) || !is_numeric($incom)) {
+      $incom = "No data";
+    } else {
+      $incom = "£".number_format($incom);
+    }
+    echo __('Annual incom: <strong>'.$incom.'</strong>') ?>
+</div>
+<?php endif; ?>

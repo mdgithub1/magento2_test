@@ -24,9 +24,60 @@
         </div>
         <div class="checkout-agreements-block">
             <!-- ko foreach: $parent.getRegion('before-place-order') -->
-                <!-- ko template: getTemplate() --><!-- /ko -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
             <!--/ko-->
         </div>
+        <!-- <div class="additional-data-block"> -->
+            <fieldset data-bind="attr: {class: 'fieldset payment items allbank ' + getCode(), id: 'payment_form_' + getCode()}">
+                <div class="field required">
+                    <label data-bind="attr: {for: getCode() + '_addDob'}" class="label label-left form">
+                        <span><b><!-- ko i18n: 'Date of Birth' --><!-- /ko --></b></span>
+                    </label>
+                    <div class="control" name="additionalData-dob" id="additionalData-dob">
+                        <input name="payment[method]"
+                               class="form-control input-text hasDatepicker"
+                               type="datetime"
+                               value=""
+                               require
+                               placeholder="dd/mm/yyyy"
+                               data-validate='{"required-entry":true, "validate-date":true}'
+                               data-bind='optionsText: "addDob",
+                                          valueUpdate: "keyup",
+                                          mageInit: {"calendarjs":{}},
+                                          attr: {
+                                            id: getCode() + "_addDob",
+                                            title: $t("DOB"),
+                                            "data-container": getCode() + "-addDob"
+                                          }' />
+                    </div>
+                </div>
+                <div class="field required form-group field" id="annual-incom">
+                    <label data-bind="attr: {for: getCode() + '_incom'}" class="label">
+                        <span><b><!-- ko i18n: 'Annual incom' --><!-- /ko --></b></span>
+                    </label>
+                    <div class="control">
+                        <input name="payment[method]"
+                               class="form-control input-text required-entry validate-digits"
+                               type="number"
+                               value=""
+                               require
+                               placeholder="Only digits please"
+                               data-bind='valueUpdate: "keyup",
+                                          optionsText: "incom",
+                                          mageInit: {"validatejs": {}},
+                                          attr: {
+                                            id: getCode() + "_incom",
+                                            title: $t("Annual incom"),
+                                            "data-container": getCode() + "-incom",
+                                            "data-validate": {"required-entry": "true", "validate-zero-or-greater": "true"}
+                                          }' />
+                    </div>
+                </div>
+            </fieldset>
+            <div style="color:red" class="error">
+              <p>The validation of additional fields in progess.. Not ready yet.</p>
+            </div>
+        <!-- </div> -->
         <div class="actions-toolbar">
             <div class="primary">
                 <button class="action primary checkout"
